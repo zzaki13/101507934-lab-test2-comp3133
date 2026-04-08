@@ -1,0 +1,90 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.details-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.details-card {
+  max-width: 800px;
+  width: 100%;
+  background: #16213e;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 167, 71, 0.3);
+  overflow: hidden;
+}
+
+.details-layout {
+  display: flex;
+  gap: 30px;
+  padding: 25px;
+}
+
+.image-section {
+  flex: 0 0 300px;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-section {
+  flex: 1;
+}
+
+.character-name {
+  margin-top: 0;
+  color: #c4a747;
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.info-section p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #d0d0d0;
+}
+
+.info-section p strong {
+  color: #e0e0e0;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #c4a747;
+  font-size: 18px;
+}
+
+.Gryffindor { color: #ae0001; font-weight: bold; }
+.Slytherin { color: #2a9d4e; font-weight: bold; }
+.Hufflepuff { color: #ecb939; font-weight: bold; }
+.Ravenclaw { color: #4a90d9; font-weight: bold; }
+
+.alive { color: #2a9d4e; font-weight: bold; }
+.dead { color: #ff6b6b; font-weight: bold; }
+
+.back-btn {
+  margin-top: 25px;
+  background: #c4a747;
+  color: #1a1a2e;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #d4b957;
+}

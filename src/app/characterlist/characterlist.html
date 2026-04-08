@@ -1,0 +1,27 @@
+<h2>Harry Potter Characters</h2>
+
+@if (loading()) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+}
+
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+
+<div class="character-grid">
+  @for (character of characters(); track character.id) {
+    <div class="character-card" [routerLink]="['/character', character.id]">
+      <img [src]="character.image" [alt]="character.name" class="character-image" />
+      <div class="card-content">
+        <h3>{{ character.name }}</h3>
+        @if (character.house) {
+          <p class="house" [class]="character.house">{{ character.house }}</p>
+        } @else {
+          <p class="house unknown">Unknown House</p>
+        }
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,33 @@
+<h2>Characters by House</h2>
+
+<div class="filter-section">
+  <mat-form-field appearance="outline">
+    <mat-label>Select House</mat-label>
+    <mat-select [(value)]="selectedHouse" (selectionChange)="filterByHouse($event.value)">
+      @for (house of houses; track house) {
+        <mat-option [value]="house">{{ house }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
+
+@if (loading()) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+}
+
+<div class="character-grid">
+  @for (character of characters(); track character.id) {
+    <div class="character-card" [routerLink]="['/character', character.id]">
+      <img [src]="character.image" [alt]="character.name" class="character-image" />
+      <div class="card-content">
+        <h3>{{ character.name }}</h3>
+        @if (character.actor) {
+          <p class="actor">Actor: {{ character.actor }}</p>
+        }
+        <p class="house" [class]="character.house">{{ character.house }}</p>
+      </div>
+    </div>
+  }
+</div>

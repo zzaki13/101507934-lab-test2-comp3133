@@ -1,0 +1,42 @@
+@if (loading()) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+}
+
+@if (character()) {
+  <div class="details-container">
+    <div class="details-card">
+      <div class="details-layout">
+        <div class="image-section">
+          <img [src]="character()!.image" [alt]="character()!.name" class="detail-image" />
+        </div>
+        <div class="info-section">
+          <h2 class="character-name">{{ character()!.name }}</h2>
+          @if (character()!.house) {
+            <p><strong>House:</strong> <span [class]="character()!.house">{{ character()!.house }}</span></p>
+          }
+          <p><strong>Actor:</strong> {{ character()!.actor || 'Unknown' }}</p>
+          <p><strong>Wizard:</strong> {{ character()!.wizard ? 'Yes' : 'No' }}</p>
+          <p><strong>Species:</strong> {{ character()!.species || 'Unknown' }}</p>
+          <p><strong>Ancestry:</strong> {{ character()!.ancestry || 'Unknown' }}</p>
+          @if (character()!.wand && character()!.wand.wood) {
+            <h3>Wand Details</h3>
+            <p><strong>Wood:</strong> {{ character()!.wand.wood }}</p>
+            <p><strong>Core:</strong> {{ character()!.wand.core }}</p>
+            <p><strong>Length:</strong> {{ character()!.wand.length }} inches</p>
+          }
+          @switch (character()!.alive) {
+            @case (true) {
+              <p><strong>Status:</strong> <span class="alive">Alive</span></p>
+            }
+            @case (false) {
+              <p><strong>Status:</strong> <span class="dead">Deceased</span></p>
+            }
+          }
+          <button class="back-btn" routerLink="/characters">← Back to List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

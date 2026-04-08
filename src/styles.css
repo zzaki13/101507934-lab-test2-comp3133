@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+h2, h3 {
+  font-family: 'Cinzel', serif;
+}
